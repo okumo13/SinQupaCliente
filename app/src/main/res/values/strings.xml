@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Cliente</string>
+    <string name="title_alarm">Alarma</string>
+    <string name="title_map">Mapa</string>
+    <string name="title_contact">Contactenos</string>
+    <string name="title_sound">Sonido</string>
+    <string name="title_distance">Distancia</string>
+    <string name="title_ubication">Ubicacion</string>
+    <string name="text_sound">Elegir Sonido</string>
+    <string name="text_distance">Elegir Distancia</string>
+    <string name="text_ubication">Elegir Ubicacion</string>
+    <string name="title_active">Activar</string>
+    <string name="dialog_distance_add">Agregar Distancia</string>
+    <string name="dialog_sound_add">Agregar Sonido</string>
+    <string name="dialog_ubication_add">Agregar Ubicacion</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCniBQzQufkodkXttssOLT6ylVev48MdiE</string>
+    <string name="notification_text">Alarma : El basurero llego ! </string>
+    <string name="open_activity">Abrir Aplicacion</string>
+    <string name="remove_location_updates">Eliminar Notificacion</string>
+</resources>
