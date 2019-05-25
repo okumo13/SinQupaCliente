@@ -9,6 +9,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -46,6 +49,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         map = googleMap;
         map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         map.setMyLocationEnabled(true);
+
+
         databaseReference.child("Employee").orderByChild("activated").equalTo(true).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -55,7 +60,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Employee employee = snapshot.getValue(Employee.class);
-
                     Utility.locationEmployee = new Location(Utility.TITLE_MARKER_EMPLOYEE);
                     Utility.locationEmployee.setLatitude(employee.getLatitudeTravel());
                     Utility.locationEmployee.setLongitude(employee.getLongitudeTravel());
@@ -66,11 +70,15 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 }
                 realTimeMarkers.clear();
                 realTimeMarkers.addAll(tmpRealTimeMarkers);
-            }
+
+
+
+        }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
+
         });
     }
 }
