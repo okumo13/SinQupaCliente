@@ -18,6 +18,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,7 @@ import java.util.ArrayList;
 public class AlarmFragment extends Fragment {
     private Button btnSave;
     private LinearLayout lytSound,lytDistance,lytUbication;
-    private Switch swActive;
+    private SwitchCompat swActive;
     private TextView lblSound,lblDistance,lblUbication;
     private MediaPlayer md;
     private Integer soundPosition,newSoundPosition = Utility.DEFAULT_INDEX_SOUND,distancePosition,newDistancePosition = Utility.DEFAULT_INDEX_DISTANCE;
@@ -64,7 +65,7 @@ public class AlarmFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_alarm,container,false);
         conn = new ConexionSQLiteHelper(getContext(), Utility.DATABASE, null, Utility.VERSION);
         btnSave = (Button) view.findViewById(R.id.btnSave);
-        swActive = (Switch)view.findViewById(R.id.swActive);
+        swActive = (SwitchCompat) view.findViewById(R.id.swActive);
         lytSound = (LinearLayout) view.findViewById(R.id.lytSound);
         lytDistance = (LinearLayout) view.findViewById(R.id.lytDistance);
         lytUbication = (LinearLayout) view.findViewById(R.id.lytUbication);
